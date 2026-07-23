@@ -1,0 +1,105 @@
+aid: live-oak-bank
+name: Live Oak Bank
+review:
+  question: Does Live Oak Bank expose a public, self-serve first-party developer API or downloadable OpenAPI/Swagger?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Live Oak Bank (Live Oak Banking Company, a subsidiary of Live Oak
+    Bancshares, NYSE: LOB) is a digital, branchless, North Carolina
+    state-chartered commercial bank and the largest U.S. SBA 7(a) lender.
+    It runs a cloud-native Finxact (Fiserv) core with an Apiture digital
+    banking platform and, in 2024, launched an in-house embedded-banking /
+    Banking-as-a-Service (BaaS) program. Its API surface is REAL but
+    PARTNER-GATED: a production AWS API Gateway operates at
+    https://api.liveoak.bank, returning HTTP 403 with
+    MissingAuthenticationToken and advertising Live-Oak-specific
+    lob-identity-id / lob-foreign-entity-id CORS headers consistent with
+    embedded-banking partner traffic. Despite this, Live Oak publishes NO
+    public self-serve developer portal, NO downloadable OpenAPI/Swagger,
+    and NO public API reference. developer.liveoak.bank does not resolve;
+    /developers on the main site 404s; the official GitHub organization
+    (github.com/liveoakbank) has 0 public repositories. Embedded-banking
+    access is contractual (partner onboarding via sales). Consumer data
+    access is available through account aggregators, not a first-party
+    public API. No documented FDX participation and no stated CFPB Section
+    1033 data-access posture were found publicly as of the review date.
+  posture:
+    firstPartyDeveloperPortal: false
+    developerPortalURL: null
+    downloadableOpenAPI: false
+    publicAPIReference: false
+    embeddedBankingBaaS: true
+    embeddedBankingAccess: partner-gated / contract (contact sales)
+    aggregatorAccessOnly: true
+    fdxParticipant: unknown-undocumented
+    section1033Posture: unknown-undocumented
+    coreProvider: Finxact (Fiserv)
+    digitalBankingPlatform: Apiture
+    authModel: unknown (gateway requires authenticated token; scheme not publicly documented)
+    specProvenance: none (no public spec harvested)
+  transports:
+    - protocol: REST
+      scheme: https
+      host: api.liveoak.bank
+      documented: false
+      note: >-
+        Live production AWS API Gateway (behind CloudFront). Returns HTTP 403
+        MissingAuthenticationToken to unauthenticated callers. No public
+        documentation, reference, or OpenAPI is published for this host; it
+        serves partner-gated embedded-banking traffic (lob-identity-id /
+        lob-foreign-entity-id headers).
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket surface is documented.
+  probes:
+    - url: https://developer.liveoak.bank
+      status: 000
+      note: DNS does not resolve — no developer subdomain exists.
+    - url: https://api.liveoak.bank
+      status: 403
+      note: MissingAuthenticationToken; AWS API Gateway via CloudFront; partner-gated, no public docs.
+    - url: https://www.liveoak.bank/
+      status: 200
+      note: Corporate site (redirect target of liveoakbank.com); SBA/small-business banking, no developer/API section.
+    - url: https://www.liveoak.bank/developers
+      status: 404
+      note: No developers page.
+    - url: https://github.com/liveoakbank
+      status: 200
+      note: Official GitHub org confirmed; 0 public repositories.
+    - url: https://resources.liveoak.bank/blog
+      status: 200
+      note: Resource Center / blog.
+    - url: https://support.liveoak.bank/
+      status: 200
+      note: Support and FAQs.
+    - url: https://www.liveoak.bank/online-privacy-notice/
+      status: 200
+      note: Online privacy notice.
+sources:
+  - url: https://www.liveoak.bank/
+    type: Website
+    note: Corporate site; SBA/small-business focus; no developer or API navigation.
+  - url: https://en.wikipedia.org/wiki/Live_Oak_Bank
+    type: Reference
+    note: Charter (NC state-chartered, 2008), NYSE LOB, largest SBA 7(a) lender, digital/branchless.
+  - url: https://www.pymnts.com/digital-first-banking/2024/live-oak-bank-launches-first-embedded-banking-partnership/
+    type: Reference
+    note: 2024 launch of first embedded-banking partnership on in-house tech + Finxact core.
+  - url: https://www.apiture.com/pressreleases/live-oak-bank-launches-new-digital-banking-experience-with-apiture/
+    type: Reference
+    note: Apiture API-first digital banking platform used by Live Oak.
+  - url: https://github.com/liveoakbank
+    type: GitHubOrganization
+    note: Official org, 0 public repositories, no SDKs or specs.
+actions:
+  openapiHarvested: false
+  reason: >-
+    No public OpenAPI/Swagger or API reference is published. The only
+    first-party API host (api.liveoak.bank) is partner-gated with no public
+    documentation, so nothing could be harvested verbatim. This is an
+    honest identity + posture record.

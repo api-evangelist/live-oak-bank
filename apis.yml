@@ -1,0 +1,70 @@
+aid: live-oak-bank
+url: https://raw.githubusercontent.com/api-evangelist/live-oak-bank/refs/heads/main/apis.yml
+name: Live Oak Bank
+kind: company
+description: >-
+  Live Oak Bank (Live Oak Banking Company) is a digital, branchless,
+  North Carolina state-chartered commercial bank founded in 2008 and
+  headquartered in Wilmington, NC, operating as the primary subsidiary of
+  Live Oak Bancshares, Inc. (NYSE: LOB). It is the largest originator of
+  U.S. Small Business Administration (SBA) 7(a) loans in the country and
+  serves small businesses in all 50 states with SBA and commercial
+  lending, high-yield business and personal savings, CDs, and business
+  checking with treasury services. Technology-forward for a bank of its
+  size, Live Oak runs a cloud-native Finxact core (now Fiserv) with an
+  Apiture-based digital banking platform, and in 2024 launched an
+  in-house embedded-banking / Banking-as-a-Service (BaaS) program that
+  lets software companies deliver Live Oak deposit and payment products
+  to their own customers. Its API surface is real but partner-gated: a
+  production AWS API gateway operates at api.liveoak.bank (returning
+  MissingAuthenticationToken to unauthenticated callers, with
+  Live-Oak-specific lob-identity-id / lob-foreign-entity-id headers), but
+  Live Oak publishes no public self-serve developer portal, no downloadable
+  OpenAPI/Swagger, and no public API reference. Consumer-permissioned data
+  access is available through account aggregators rather than a first-party
+  public API, and no FDX participation or CFPB Section 1033 data-access
+  posture is publicly documented.
+accessModel:
+  pricing: partner
+  onboarding: contact-sales
+  trial: false
+  try_now: false
+  public: false
+  label: Partner-gated · Embedded banking / BaaS (no public developer portal)
+  confidence: high
+  source:
+  - website
+  - api-gateway-probe
+  generated: '2026-07-23'
+  method: manual
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- United States
+- Small Business Lending
+- SBA
+- Embedded Banking
+- Banking-as-a-Service
+- Digital Bank
+- Open Finance
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.liveoak.bank/
+- type: Blog
+  url: https://resources.liveoak.bank/blog
+- type: Support
+  url: https://support.liveoak.bank/
+- type: PrivacyPolicy
+  url: https://www.liveoak.bank/online-privacy-notice/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/live-oak-bank
+- type: GitHubOrganization
+  url: https://github.com/liveoakbank
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
