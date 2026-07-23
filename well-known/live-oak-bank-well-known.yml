@@ -1,0 +1,18 @@
+generated: '2026-07-23'
+method: probed
+source: live probes of api.liveoak.bank + www.liveoak.bank
+note: >-
+  No .well-known discovery documents are published. The production API
+  gateway at api.liveoak.bank rejects all requests with HTTP 403 (WAF /
+  partner-gated); the marketing host www.liveoak.bank returns 404 for the
+  discovery surface. Absence recorded as valid data — no WellKnown pointer
+  is wired because nothing returned 200.
+hosts:
+- host: https://api.liveoak.bank
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+- host: https://www.liveoak.bank
+  documents:
+  - {path: /.well-known/security.txt, status: 404}

@@ -53,6 +53,8 @@ modified: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/live-oak-bank-domain-security.yml
 - type: Website
   url: https://www.liveoak.bank/
 - type: Blog
@@ -65,6 +67,10 @@ common:
   url: https://www.linkedin.com/company/live-oak-bank
 - type: GitHubOrganization
   url: https://github.com/liveoakbank
+- type: SignUp
+  url: https://www.liveoak.bank/get-started/
+- type: LLMsTxt
+  url: llms/live-oak-bank-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

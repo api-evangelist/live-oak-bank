@@ -1,0 +1,39 @@
+# Live Oak Bank
+
+> Live Oak Bank (Live Oak Banking Company) is a digital, branchless, North
+> Carolina state-chartered commercial bank headquartered in Wilmington, NC, and
+> the primary subsidiary of Live Oak Bancshares, Inc. (NYSE: LOB). It is the
+> largest originator of U.S. Small Business Administration (SBA) 7(a) loans in
+> the country, serving small businesses in all 50 states with SBA and commercial
+> lending, high-yield business/personal savings, CDs, and business checking with
+> treasury services. In 2024 it launched an in-house embedded-banking /
+> Banking-as-a-Service (BaaS) program on a cloud-native Finxact (Fiserv) core.
+> Its API surface is real but partner-gated: a production AWS API gateway runs at
+> api.liveoak.bank, but there is no public self-serve developer portal, no
+> downloadable OpenAPI/Swagger, and no public API reference.
+
+## API surface
+- No public API contract. The production gateway at https://api.liveoak.bank
+  returns MissingAuthenticationToken/403 to unauthenticated callers and uses
+  Live-Oak-specific lob-identity-id / lob-foreign-entity-id headers. Access is
+  partner-gated via the embedded-banking / BaaS program (contact sales).
+
+## Company
+- Website: https://www.liveoak.bank/
+- Our Story: https://www.liveoak.bank/our-story/
+- Business banking: https://www.liveoak.bank/business/
+- Business loans (SBA): https://www.liveoak.bank/business-loans/sba-loans/
+- Business checking + treasury: https://www.liveoak.bank/business-checking/
+- Get started (open account): https://www.liveoak.bank/get-started/
+- Contact: https://www.liveoak.bank/contact-us/
+
+## Docs
+- Support: https://support.liveoak.bank/
+- Blog: https://resources.liveoak.bank/blog
+- Online Privacy Notice: https://www.liveoak.bank/online-privacy-notice/
+- Privacy & Security: https://www.liveoak.bank/privacy-security/
+
+## Optional
+- LinkedIn: https://www.linkedin.com/company/live-oak-bank
+- GitHub (no public repos): https://github.com/liveoakbank
+- Parent (NYSE: LOB): https://investor.liveoakbank.com/
