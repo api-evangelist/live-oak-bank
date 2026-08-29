@@ -1,5 +1,8 @@
 aid: live-oak-bank
 url: https://raw.githubusercontent.com/api-evangelist/live-oak-bank/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Its API surface is real but partner-gated: a production AWS API gateway operates at api.liveoak.bank (returning MissingAuthenticationToken to unauthenticated callers, with Live-Oak-specific lob-identi"
 name: Live Oak Bank
 kind: company
 description: >-
