@@ -1,4 +1,4 @@
-# Live Oak Bank (live-oak-bank)
+# Live Oak Bank
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,54 +64,84 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Live Oak Bank (Live Oak Banking Company) is a digital, branchless, North Carolina state-chartered commercial bank founded in 2008 and headquartered in Wilmington, NC, operating as the primary subsidiary of Live Oak Bancshares, Inc. (NYSE: LOB). It is the largest originator of U.S. SBA 7(a) loans in the country and serves small businesses in all 50 states with SBA and commercial lending, high-yield savings, CDs, and business checking with treasury services. It runs a cloud-native Finxact (Fiserv) core with an Apiture digital banking platform, and in 2024 launched an in-house embedded-banking / Banking-as-a-Service program.
+Live Oak Bank (Live Oak Banking Company) is a digital, branchless, North Carolina state-chartered commercial bank founded in 2008 and headquartered in Wilmington, NC, operating as the primary subsidiary of Live Oak Bancshares, Inc. (NYSE: LOB). It is the largest originator of U.S. Small Business Administration (SBA) 7(a) loans in the country and serves small businesses in all 50 states with SBA and commercial lending, high-yield business and personal savings, CDs, and business checking with treasury services. Technology-forward for a bank of its size, Live Oak runs a cloud-native Finxact core (now Fiserv) with an Apiture-based digital banking platform, and in 2024 launched an in-house embedded-banking / Banking-as-a-Service (BaaS) program that lets software companies deliver Live Oak deposit and payment products to their own customers. Its API surface is real but partner-gated: a production AWS API gateway operates at api.liveoak.bank (returning MissingAuthenticationToken to unauthenticated callers, with Live-Oak-specific lob-identity-id / lob-foreign-entity-id headers), but Live Oak publishes no public self-serve developer portal, no downloadable OpenAPI/Swagger, and no public API reference. Consumer-permissioned data access is available through account aggregators rather than a first-party public API, and no FDX participation or CFPB Section 1033 data-access posture is publicly documented.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/live-oak-bank/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/live-oak-bank/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · United States · Small Business Lending · SBA · Embedded Banking · Banking as a Service · Digital Bank · Open Finance
 
-## Open-Finance / API Posture
+## Live Oak Bank on APIs.io
 
-Live Oak Bank's API surface is **real but partner-gated**. A production AWS API gateway operates at `api.liveoak.bank` — it returns `MissingAuthenticationToken` (HTTP 403) to unauthenticated callers and advertises Live-Oak-specific `lob-identity-id` / `lob-foreign-entity-id` CORS headers, consistent with its embedded-banking / BaaS program. However:
+Everything profiled for Live Oak Bank is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/live-oak-bank/](https://apis.io/providers/live-oak-bank/)** — or go straight to one of the APIs or properties below.
 
-- **No public developer portal.** `developer.liveoak.bank` does not resolve, and `/developers` on the main site returns 404.
-- **No downloadable OpenAPI/Swagger** and **no public API reference** are published.
-- The official GitHub organization ([liveoakbank](https://github.com/liveoakbank)) has **0 public repositories**.
-- Embedded-banking access is contractual (partner onboarding via sales), not self-serve.
-- Consumer-permissioned data access is available through **account aggregators**, not a first-party public API.
-- **No documented FDX participation** and **no stated CFPB Section 1033** data-access posture were found publicly as of this profile.
+### Published properties
 
-As such, this is an **identity + honest posture** record. There are no public `apis[]` entries because Live Oak exposes no publicly documented API surface.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Tags
+#### Security (1)
 
-- Financial Services
-- Banking
-- United States
-- Small Business Lending
-- SBA
-- Embedded Banking
-- Banking-as-a-Service
-- Digital Bank
-- Open Finance
+Authentication, trust centre, and vulnerability disclosure.
 
-## Timestamps
+- [Live Oak Bank Domain Security](https://apis.io/security/live-oak-bank/live-oak-bank-domain-security/)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+## Where to find this API
 
-## APIs
-
-None publicly documented. Live Oak's embedded-banking API (`api.liveoak.bank`) is partner-gated with no public documentation, OpenAPI, or self-serve onboarding.
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.liveoak.bank/)
-- [Blog](https://resources.liveoak.bank/blog)
+- [Sign up](https://www.liveoak.bank/get-started/)
 - [Support](https://support.liveoak.bank/)
-- [Privacy Policy](https://www.liveoak.bank/online-privacy-notice/)
-- [LinkedIn](https://www.linkedin.com/company/live-oak-bank)
-- [GitHub Organization](https://github.com/liveoakbank)
+- [Blog](https://resources.liveoak.bank/blog)
+- [Privacy policy](https://www.liveoak.bank/online-privacy-notice/)
+- [GitHub](https://github.com/liveoakbank)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 10.2** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 23.7 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 7.9** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/live-oak-bank/](https://apis.io/providers/live-oak-bank/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Live Oak Bank: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/live-oak-bank/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
